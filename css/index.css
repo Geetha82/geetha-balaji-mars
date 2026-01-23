@@ -14,10 +14,13 @@ h1 {
     color: rgb(69, 69, 71);
 }
 
-h2{
-  font-size: 48px; /* Sets the size of the font */
-  font-weight: bold; /* Sets how thick or thin characters in the font rendered */
-  color: #333333; /* Sets the color of the text (dark gray in this example) */
+h2 {
+    font-size: 48px;
+    /* Sets the size of the font */
+    font-weight: bold;
+    /* Sets how thick or thin characters in the font rendered */
+    color: #333333;
+    /* Sets the color of the text (dark gray in this example) */
 }
 
 
@@ -39,6 +42,7 @@ section {
 #About img {
     width: 100px;
 }
+
 #Experience {
     background-color: white;
 }
@@ -59,11 +63,10 @@ section {
 }
 
 #Connect a {
-    color: rgb(60, 12, 173);
+    color: rgb(41, 7, 196);
 }
 
 #Connect a:hover {
     color: purple;
     text-decoration: underline;
 }
-
