@@ -7,6 +7,33 @@ body {
     font-size: 16px;
 }
 
+header {
+    position: sticky;
+    /* Fixes the header to the viewport */
+    top: 0;
+    /* Aligns it to the very top of the screen */
+    width: 100%;
+    /* Ensures it spans the full width of the screen */
+    background-color: #66c7ea;
+    /* background color */
+    color: rgb(230, 217, 241);
+    /* text color */
+    padding: 20px 0;
+    /* padding */
+    z-index: 1000;
+    /* Ensures the header is above other content */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 0;
+    margin: 0;
+}
+
 h1 {
     text-align: center;
     font-size: 3em;
@@ -35,7 +62,7 @@ section {
 #About {
     text-align: center;
     /*Make title centered */
-    background-color: rgb(93, 203, 234);
+    background-color: rgb(186, 237, 175);
     box-shadow: 0 2px 5px rgba(rgb(237, 208, 208), green, blue, alpha);
 }
 
@@ -43,28 +70,44 @@ section {
     width: 100px;
 }
 
-
-#Experience {
-    background-color: white;
+.experience{
+    background-color: rgb(163, 242, 204);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Stack the header and description vertically */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #020101;
 }
 
-#Experience ul {
-    list-style: none;
-    padding: 0;
-    background-color: aliceblue;
+.experience-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Align items to the baseline */
+
 }
 
-#Experience li {
-    background-color: rgb(65, 193, 222);
-    margin-bottom: 4px;
+/*Description will sit below because of flex-direction: column above */
+.experience description {
+    margin-top: 5px;
 }
 
 #Connect {
     background-color: rgb(85, 208, 226);
+    font-size: large;
 }
 
 #Connect a {
     color: rgb(41, 7, 196);
+}
+
+#Connect ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
 }
 
 #Connect a:hover {
