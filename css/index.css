@@ -1,12 +1,16 @@
+/* =========================================
+   Mobile-First Styles (Default - Phones)
+   ========================================= */
 body {
     background-color: #c9f4fb;
-    /* Change this to your desired color */
     color: #393e3d;
-    /* Example: changes text to red */
+    margin: 0;
+    padding: 0.625rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 1em
 }
 
+/* header section */
 header {
     position: sticky;
     /* Fixes the header to the viewport */
@@ -14,11 +18,12 @@ header {
     /* Aligns it to the very top of the screen */
     width: 100%;
     /* Ensures it spans the full width of the screen */
+    height: auto;
     background-color: #66c7ea;
     /* background color */
     color: rgb(230, 217, 241);
     /* text color */
-    padding: 20px 0;
+    padding: 1.25rem 0;
     /* padding */
     z-index: 1000;
     /* Ensures the header is above other content */
@@ -28,10 +33,16 @@ header {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 100px;
+    gap: 6.25rem;
     padding: 0;
     margin: 0;
+}
+
+nav a {
+    font-weight: bold;
+    /* OR use a numeric value like 700 */
 }
 
 h1 {
@@ -42,7 +53,7 @@ h1 {
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 3em;
     /* Sets the size of the font */
     font-weight: bold;
     /* Sets how thick or thin characters in the font rendered */
@@ -50,34 +61,45 @@ h2 {
     /* Sets the color of the text (dark gray in this example) */
 }
 
-
 section {
-    margin: 20px;
+    margin: 1.25rem 0;
     /* space between sections */
-    padding: 20px;
-    /* padding around each section */
-
+    padding: 2.5rem
+        /* padding around each section */
 }
 
+
+/* About section */
 #About {
     text-align: center;
     /*Make title centered */
     background-color: rgb(186, 237, 175);
-    box-shadow: 0 2px 5px rgba(rgb(237, 208, 208), green, blue, alpha);
+    border: 2px solid #020101;
+    box-shadow: 0 0.125rem 0.125rem rgba(237, 208, 208, 0.5);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #About img {
-    width: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    /* Makes the image circular */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
 }
 
-.experience{
+/* Experience Section */
+.experience {
     background-color: rgb(163, 242, 204);
-    padding: 10px;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     /* Stack the header and description vertically */
-    margin-bottom: 20px;
-    border-bottom: 1px solid #020101;
+    margin-bottom: 1.25rem;
+    border-bottom: 0.125rem solid #020101;
 }
 
 .experience-header-row {
@@ -88,13 +110,14 @@ section {
 
 }
 
-/*Description will sit below because of flex-direction: column above */
 .experience description {
-    margin-top: 5px;
+    margin-top: 0.625rem;
 }
 
+
+/* Connect Section */
 #Connect {
-    background-color: rgb(85, 208, 226);
+    background-color: rgb(174, 226, 85);
     font-size: large;
 }
 
@@ -103,9 +126,10 @@ section {
 }
 
 #Connect ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: space-evenly;
-    gap: 20px;
+    gap: 1.25rem;
     padding: 0;
     list-style: none;
 }
@@ -113,4 +137,85 @@ section {
 #Connect a:hover {
     color: purple;
     text-decoration: underline;
+}
+
+
+/* Footer Section */
+footer {
+    text-align: center;
+    background-color: #66c7ea;
+}
+
+footer {
+    text-align: center;
+    background-color: #66c7ea;
+}
+
+/* =========================================
+   Tablet Styles (Min-Width: 768px)
+   ========================================= */
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+        /* Change 1: Increase font size */
+        color: #e75613;
+        /* Change 2: Change color */
+        margin-top: 3rem;
+        /* Change 3: Add top margin */
+    }
+
+    header nav ul {
+        padding: 1.25rem;
+        /* Change 1: Increase padding */
+        background-color: #e856d0;
+        /* Change 2: Change background color */
+    }
+
+    header {
+        font-size: 1.5rem;
+        /* Change 1: Increase font size */
+        font-style: italic;
+        /* Change 2: Change font style */
+    }
+
+    #Connect ul {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 1.25rem;
+    }
+}
+
+/* =========================================
+   Desktop Styles (Min-Width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.25rem;
+        /* Change 1: Further increase size */
+        color: #000;
+        /* Change 2: Further change color */
+        margin-top: 3.5rem;
+        /* Change 3: Add top margin */
+    }
+
+    header nav ul {
+        padding: 2.5rem;
+        /* Change 1: Increase padding again */
+        background-color: #ef9607;
+        /* Change 2: Change background color */
+    }
+
+    header {
+        font-size: 2rem;
+        /* Change 1: Further increase size */
+        font-weight: bold;
+        /* Change 2: Change font weight */
+    }
+
+    #Connect ul {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 3.25rem;
+    }
 }
