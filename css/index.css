@@ -2,7 +2,7 @@
    Mobile-First Styles (Default - Phones)
    ========================================= */
 body {
-    background-color: #c9f4fb;
+    background-color: #3e82f7;
     color: #393e3d;
     margin: 0;
     padding: 0.625rem;
@@ -114,6 +114,26 @@ section {
     margin-top: 0.625rem;
 }
 
+
+/* Skills Section */
+#Skills {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 0;
+    background-color: rgb(175, 232, 176);
+}
+
+#Skills li {
+     list-style: none;
+    font-size: medium;
+    background-color: rgb(150, 154, 152);
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 0.25rem;
+    justify-content: center;
+}
 
 /* Connect Section */
 #Connect {
