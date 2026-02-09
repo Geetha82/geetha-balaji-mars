@@ -126,7 +126,7 @@ section {
 }
 
 #Skills li {
-     list-style: none;
+    list-style: none;
     font-size: medium;
     background-color: rgb(150, 154, 152);
     padding: 0.625rem 1.25rem;
@@ -204,6 +204,11 @@ footer {
         justify-content: center;
         gap: 1.25rem;
     }
+
+    #Skills {
+        /* Changes to a two-column layout on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* =========================================
@@ -232,6 +237,12 @@ footer {
         font-weight: bold;
         /* Change 2: Change font weight */
     }
+
+    #Skills {
+        /* Changes to a single column layout on small screens */
+        grid-template-columns: 1fr;
+    }
+
 
     #Connect ul {
         grid-template-columns: repeat(3, 1fr);
