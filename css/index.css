@@ -2,7 +2,7 @@
    Mobile-First Styles (Default - Phones)
    ========================================= */
 body {
-    background-color: #c9f4fb;
+    background-color: #3e82f7;
     color: #393e3d;
     margin: 0;
     padding: 0.625rem;
@@ -115,6 +115,26 @@ section {
 }
 
 
+/* Skills Section */
+#Skills {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 0;
+    background-color: rgb(175, 232, 176);
+}
+
+#Skills li {
+    list-style: none;
+    font-size: medium;
+    background-color: rgb(150, 154, 152);
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 0.25rem;
+    justify-content: center;
+}
+
 /* Connect Section */
 #Connect {
     background-color: rgb(174, 226, 85);
@@ -184,6 +204,11 @@ footer {
         justify-content: center;
         gap: 1.25rem;
     }
+
+    #Skills {
+        /* Changes to a two-column layout on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* =========================================
@@ -212,6 +237,12 @@ footer {
         font-weight: bold;
         /* Change 2: Change font weight */
     }
+
+    #Skills {
+        /* Changes to a single column layout on small screens */
+        grid-template-columns: 1fr;
+    }
+
 
     #Connect ul {
         grid-template-columns: repeat(3, 1fr);
