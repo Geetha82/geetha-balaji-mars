@@ -6,14 +6,11 @@ const body = document.body;
 //Create the footer element
 let footer = document.createElement("footer");
 
-//Append the footer to the body
-body.appendChild(footer);
-
 //Create a new Date object
 const today = new Date();
 
 //Get the current year from the Date object
-const thisyear = today.getFullYear();
+const thisYear = today.getFullYear();
 
 //get the current footer element
 const footerElement = document.querySelector("footer");
@@ -24,13 +21,14 @@ const copyright = document.createElement("p");
 // Set the inner HTML with the copyright symbol, my name, and year
 //<p>copyright Geetha Balaji 2025</p>
 
-copyright.innerHTML = `\u00A9 Geetha Balaji ${thisyear}`;
+copyright.innerHTML = `\u00A9 Geetha Balaji ${thisYear}`;
 
 // Append the paragraph to the footer
 footer.appendChild(copyright);
 
-//Center the text in the footer
-footer.style.textAlign = "center";
+//Append the footer to the body
+body.appendChild(footer);
+
 
 
 //------Skills Section-------
