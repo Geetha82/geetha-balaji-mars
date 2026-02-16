@@ -159,6 +159,88 @@ section {
     text-decoration: underline;
 }
 
+/* --- Base Styles (Mobile First) --- */
+#message-form {
+    background-color: rgb(114, 177, 115);
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Adequate spacing between fields */
+    padding: 1.5rem;
+    /* margin: 1.25rem  auto; */
+    border: #000 solid 0.125rem;
+}
+
+#message-form label {
+    font-weight: bold;
+    /* Emphasize labels */
+}
+
+/* Input and Textarea styling */
+#message-form input[type=text],
+#message-form input[type=email],
+#message-form textarea {
+    width: 100%;
+    /* Make elements full width */
+    padding: 12px;
+    /* Add internal spacing */
+    margin-bottom: 16px;
+    /* Space below elements */
+    border: 1px solid #ccc;
+    /* Define border */
+    border-radius: 4px;
+    /* Round corners */
+    box-sizing: border-box;
+    /* Include padding/border in width */
+}
+
+/* Allow vertical resizing only for textarea */
+#message-form textarea {
+    resize: vertical;
+}
+
+/* Style for focus state */
+#message-form input:focus,
+#message-form textarea:focus {
+    border-color: #007bff;
+    /* Highlight border on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+
+#message-form button {
+    width: 20%;
+    padding: 12px;
+    /* Add internal spacing */
+    background-color: #0f100f;
+    color: white;
+    /* White text color */
+    border: black solid 0.125rem;
+    /* Black border */
+    border-radius: 4px;
+    /* Round corners */
+    cursor: pointer;
+    font-size: 16px;
+    align-items: center;
+}
+
+/* --- Responsive Media Query (Desktop) --- */
+@media (min-width: 768px) {
+    #message-form {
+        width: 50%;
+        /* Center the form on larger screens */
+    }
+
+    #submit-button {
+        width: auto;
+        /* Allow button to the size based on the message */
+        padding: 12px 24px;
+        /* Adjust padding for desktop */
+    }
+}
+
 
 /* Footer Section */
 footer {

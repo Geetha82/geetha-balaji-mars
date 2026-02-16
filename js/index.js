@@ -54,3 +54,118 @@ for (let i = 0; i < skills.length; i++) {
     //Append the list item to the skills list
     skillsList.appendChild(skill);
 }
+
+//------Message Form Section------
+
+//Helper function to togggle the section visibility
+function toggleMessagesSection() {
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+    if (messageList.children.length === 0) {
+        messageSection.style.display = "none";
+    } else {
+        messageSection.style.display = "block";
+    }
+}
+
+// //Initially hide the messages section
+toggleMessagesSection();
+
+
+//Select the message form by name
+const messageForm = document.querySelector("form[name=leave_message]");
+
+//Add an event listener for the form submission
+messageForm.addEventListener("submit", function (event) {
+    //Prevent the page refresh
+    event.preventDefault();
+
+    //Retrieve form feild values
+    const userName = event.target.usersName.value;
+    const userEmail = event.target.usersEmail.value;
+    const userMessage = event.target.usersMessage.value;
+
+    //log the values to the console 
+    console.log("Name: " + userName);
+    console.log("Email: " + userEmail);
+    console.log("Message: " + userMessage);
+
+    //Select the #messages section
+    const messagesSection = document.getElementById("messages");
+
+    //Select the <ul> inside the #messages section
+    const messagesList = messagesSection.querySelector("ul");
+
+    //Create a new list item 
+    const newMessage = document.createElement("li");
+
+    //Set the inner HTML
+    newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a>: <span>${userMessage}</span>`;
+
+    // Create an edit button
+    const editButton = document.createElement("button");
+    editButton.innerText = "edit";
+    editButton.className = "edit-btn";
+    editButton.type = "button";
+
+    //Add click event listener to the edit button
+    editButton.addEventListener("click", function () {
+        //Find the <span> element that contains the message
+        const messageSpan = newMessage.querySelector("span");
+
+        //Prompt the user to for a new message
+        const newTest = prompt("Edit your message:", messageSpan.innerText);
+
+        //If the user entered a new message, update the <span> text
+        if (newTest !== null) {
+            messageSpan.innerText = newTest;
+        }
+    });
+
+
+    //append the edit button to the new message
+    newMessage.appendChild(editButton);
+
+
+    // create a remove button
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.className = "remove-btn";
+    removeButton.type = "button";
+
+    //Add click event listener to the remove the message
+    removeButton.addEventListener("click", function () {
+        //Find the<li>
+        const entry = removeButton.parentNode;
+
+        //Remove entry
+        entry.remove();
+        // toggle if no more messages
+        toggleMessagesSection();
+
+    });
+
+    //Append the remove button to the new message
+    newMessage.appendChild(removeButton);
+
+    //Append the new message to the messages list
+    messagesList.appendChild(newMessage);
+
+
+    // toggle if no more messages
+    toggleMessagesSection();
+
+
+    //clear form after submission
+    messageForm.reset();
+});
+
+
+
+
+
+
+
+
+
+
