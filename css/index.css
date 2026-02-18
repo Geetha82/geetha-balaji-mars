@@ -183,13 +183,13 @@ section {
 #message-form textarea {
     width: 100%;
     /* Make elements full width */
-    padding: 12px;
+    padding: 0.75rem;
     /* Add internal spacing */
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     /* Space below elements */
     border: 1px solid #ccc;
     /* Define border */
-    border-radius: 4px;
+    border-radius: 0.25rem;
     /* Round corners */
     box-sizing: border-box;
     /* Include padding/border in width */
@@ -197,6 +197,7 @@ section {
 
 /* Allow vertical resizing only for textarea */
 #message-form textarea {
+    margin-bottom: 1rem; /* Adjust spacing as needed */
     resize: vertical;
 }
 
@@ -212,19 +213,31 @@ section {
 
 #message-form button {
     width: 20%;
-    padding: 12px;
+    padding: 0.75rem;
     /* Add internal spacing */
     background-color: #0f100f;
     color: white;
     /* White text color */
     border: black solid 0.125rem;
     /* Black border */
-    border-radius: 4px;
+    border-radius: 0.25rem;
     /* Round corners */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1em;
     align-items: center;
 }
+
+/* Edit and remove button style */
+.edit-btn, .remove-btn {
+    margin-left: 0.625rem;
+    padding: 0.375rem 0.75rem;
+    background-color: #0f100f;
+    color: white;
+    border: black solid 0.125rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
 
 /* --- Responsive Media Query (Desktop) --- */
 @media (min-width: 768px) {

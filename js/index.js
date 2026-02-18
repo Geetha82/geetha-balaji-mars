@@ -111,7 +111,7 @@ messageForm.addEventListener("submit", function (event) {
     //Add click event listener to the edit button
     editButton.addEventListener("click", function () {
         //Find the <span> element that contains the message
-        const messageSpan = newMessage.querySelector("span");
+        const messageSpan = this.parentNode.querySelector("span");
 
         //Prompt the user to for a new message
         const newTest = prompt("Edit your message:", messageSpan.innerText);
@@ -129,14 +129,14 @@ messageForm.addEventListener("submit", function (event) {
 
     // create a remove button
     const removeButton = document.createElement("button");
-    removeButton.innerText = "Remove";
+    removeButton.innerText = "remove";
     removeButton.className = "remove-btn";
     removeButton.type = "button";
 
     //Add click event listener to the remove the message
     removeButton.addEventListener("click", function () {
         //Find the<li>
-        const entry = removeButton.parentNode;
+        const entry = this.parentNode;
 
         //Remove entry
         entry.remove();
