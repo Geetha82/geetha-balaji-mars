@@ -1,4 +1,3 @@
-# geetha-balaji-mars
-[My Portfolio Project]
-(https://github.com/Geetha82/geetha-balaji-mars)
-
+# OpenMateo-API
+[My Open API Project]
+(https://github.com/Geetha82/OpenMateo-API)
