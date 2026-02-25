@@ -182,6 +182,8 @@ section {
     text-decoration: underline;
 }
 
+/* Project Section */
+
 #Projects {
     background-color: rgb(236, 167, 167);
     padding: 1.5rem;
@@ -193,6 +195,14 @@ section {
 }
 
 #Projects li {
+    background-color: rgb(241, 204, 204);
+    padding: 1.25rem;
+    box-shadow: 0 0.125rem 0.125rem rgba(237, 208, 208, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+#Projects ul {
     list-style: none;
     background-color: rgb(154, 153, 150);
     padding: 0.625rem 1.25rem;
@@ -284,46 +294,26 @@ section {
     cursor: pointer;
 }
 
-
-/* --- Responsive Media Query (Desktop) --- */
-@media (min-width: 768px) {
-    #message-form {
-        width: 50%;
-        /* Center the form on larger screens */
-    }
-
-    #submit-button {
-        width: auto;
-        /* Allow button to the size based on the message */
-        padding: 12px 24px;
-        /* Adjust padding for desktop */
-    }
-}
-
-
 /* Footer Section */
 footer {
     text-align: center;
     background-color: #66c7ea;
 }
 
-footer {
-    text-align: center;
-    background-color: #66c7ea;
-}
 
 /* =========================================
    Tablet Styles (Min-Width: 768px)
    ========================================= */
-body {
-    display: flex;
-    flex-direction: column;
-    /* Stacks sections vertically */
-    gap: 20px;
-    /* Adds 20px space between all direct children */
-}
 
 @media (min-width: 768px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
     h1 {
         font-size: 1.75rem;
         /* Change 1: Increase font size */
@@ -367,10 +357,22 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
-#Projects li {
+#Projects ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+}
+
+#message-form {
+    width: 50%;
+    /* Center the form on larger screens */
+}
+
+#submit-button {
+    width: auto;
+    /* Allow button to the size based on the message */
+    padding: 12px 24px;
+    /* Adjust padding for desktop */
 }
 
 /* =========================================
@@ -411,17 +413,16 @@ body {
         width: 100%;
     }
 
-    */ #Skills {
+    #Skills {
         /* Changes to a single column layout on small screens */
         grid-template-columns: 1fr;
     }
 
-    #Projects li {
+    #Projects ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
-
 
     #Connect ul {
         grid-template-columns: repeat(3, 1fr);
