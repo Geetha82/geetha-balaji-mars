@@ -18,13 +18,14 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 100;
     color: rgb(69, 69, 71);
+    padding: 0 1rem;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 1.8rem;
     /* Sets the size of the font */
     font-weight: bold;
     /* Sets how thick or thin characters in the font rendered */
@@ -33,9 +34,9 @@ h2 {
 }
 
 section {
-    margin: 1.25rem 0;
+    margin: 1rem 0;
     /* space between sections */
-    padding: 1rem 0.625rem;
+    padding: 1rem;
     /* padding around each section */
     scroll-margin-top: 5rem;
     /* Ensures that when a section is scrolled into view, it accounts for the height of the sticky header */
@@ -53,7 +54,7 @@ header {
     /* background color */
     color: rgb(230, 217, 241);
     /* text color */
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
     /* padding */
     z-index: 1000;
     /* Ensures the header is above other content */
@@ -62,7 +63,7 @@ header {
 }
 
 header li {
-    font-size: 1.1rem;
+    font-size: 1rem;
     flex-direction: column;
     /* Sets the font size for list items in the header */
 }
@@ -72,7 +73,7 @@ header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -100,7 +101,7 @@ nav a:hover {
     box-shadow: 0 0.125rem 0.125rem rgba(237, 208, 208, 0.5);
     /* margin-left: auto;
     margin-right: auto; */
-    padding: 1.25rem;
+    padding: 1.5rem;
     margin: 0;
 }
 
@@ -122,14 +123,15 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     /* Stack the header and description vertically */
-    margin-bottom: 1.25rem;
-    border-bottom: 0.125rem solid #020101;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #020101;
 }
 
 .experience-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column; 
     /* Align items to the baseline */
 
 }
@@ -150,12 +152,13 @@ nav a:hover {
 
 #Skills li {
     list-style: none;
-    font-size: medium;
+    font-size: 0.9rem;
     background-color: rgb(154, 153, 150);
-    padding: 0.625rem 1.25rem;
-    border-radius: 0.625rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     margin: 0.25rem;
     justify-content: center;
+     border-radius: 0.5rem;
 }
 
 /* Project Section */
@@ -171,8 +174,7 @@ nav a:hover {
     padding: 0;
     margin: 0;
     display: grid;
-    /*  create a responsive grid without needing many media queries */
-    grid-template-columns: repeat(auto-fit, minmax(2515.625rem, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.25rem;
 }
 
@@ -194,7 +196,7 @@ nav a:hover {
 /* Connect Section */
 #Connect {
     background-color: rgb(240, 128, 128);
-    padding: 1.25rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     /* Stack the header and description vertically */
@@ -211,7 +213,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: space-evenly;
-    gap: 1.25rem;
+    gap: 1rem;
     padding: 0;
     list-style: none;
 }
@@ -231,7 +233,7 @@ nav a:hover {
     /* Adequate spacing between fields */
     padding: 1.5rem;
     /* margin: 1.25rem  auto; */
-    border: #000 solid 0.125rem;
+    border: #000 solid 2px;
 }
 
 #message-form label {
@@ -322,7 +324,7 @@ footer {
     }
 
     h1 {
-        font-size: 1.75rem;
+        font-size: 3rem;
         /* Change 1: Increase font size */
         color: #e75613;
         /* Change 2: Change color */
@@ -363,6 +365,9 @@ footer {
         background-color: #e75613;
     }
 
+    .experience-header-row { flex-direction: row; justify-content: space-between; }
+
+
     /* 4. Grid Layouts */
     #Skills,
     #Projects ul,
@@ -382,7 +387,7 @@ footer {
 
     #Projects ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.25rem;
     }
 
@@ -394,7 +399,7 @@ footer {
     }
 
     #submit-button {
-        width: auto;
+        width: 20%;
         /* Allow button to the size based on the message */
         padding: 0.75rem 1.5rem;
         /* Adjust padding for desktop */
