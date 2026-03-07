@@ -1,18 +1,47 @@
 /* =========================================
    Mobile-First Styles (Default - Phones)
    ========================================= */
+
+/* apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #e5d4e8;
     color: #0f0e0f;
     margin: 0;
-    padding: 0.625rem;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
+}
 
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100;
+    color: rgb(69, 69, 71);
+}
+
+h2 {
+    font-size: 3rem;
+    /* Sets the size of the font */
+    font-weight: bold;
+    /* Sets how thick or thin characters in the font rendered */
+    color: #333333;
+    /* Sets the color of the text (dark gray in this example) */
+}
+
+section {
+    margin: 1.25rem 0;
+    /* space between sections */
+    padding: 1rem 0.625rem;
+    /* padding around each section */
+    scroll-margin-top: 5rem;
+    /* Ensures that when a section is scrolled into view, it accounts for the height of the sticky header */
 }
 
 /* header section */
-
 header {
     position: sticky;
     /* Fixes the header to the viewport */
@@ -24,15 +53,16 @@ header {
     /* background color */
     color: rgb(230, 217, 241);
     /* text color */
-    padding: .65rem 0;
+    padding: 1rem 0;
     /* padding */
-    z-index: index;
+    z-index: 1000;
     /* Ensures the header is above other content */
     font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
 }
 
 header li {
-    font-size: 1.25em;
+    font-size: 1.1rem;
     flex-direction: column;
     /* Sets the font size for list items in the header */
 }
@@ -42,12 +72,11 @@ header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6.25rem;
+    gap: 2rem;
     padding: 0;
     margin: 0;
     width: 100%;
 }
-
 
 nav a {
     font-weight: bold;
@@ -55,32 +84,10 @@ nav a {
     text-decoration: none;
 }
 
-
-h1 {
-    text-align: center;
-    font-size: 3em;
-    font-weight: 100;
-    color: rgb(69, 69, 71);
+nav a:hover {
+    color: #ef9607;
+    text-decoration: underline;
 }
-
-h2 {
-    font-size: 3em;
-    /* Sets the size of the font */
-    font-weight: bold;
-    /* Sets how thick or thin characters in the font rendered */
-    color: #333333;
-    /* Sets the color of the text (dark gray in this example) */
-}
-
-section {
-    margin: 1.25rem 0;
-    /* space between sections */
-    padding: 2.5rem;
-    /* padding around each section */
-    scroll-margin-top: 80px;
-    /* Ensures that when a section is scrolled into view, it accounts for the height of the sticky header */
-}
-
 
 /* About section */
 #About {
@@ -131,7 +138,6 @@ section {
     margin-top: 0.625rem;
 }
 
-
 /* Skills Section */
 #Skills {
     padding: 1.25rem;
@@ -150,6 +156,39 @@ section {
     border-radius: 0.625rem;
     margin: 0.25rem;
     justify-content: center;
+}
+
+/* Project Section */
+#Projects {
+    background-color: rgb(236, 167, 167);
+    padding: 1.5rem;
+    margin: 0;
+}
+
+/* Project list */
+#Projects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    /*  create a responsive grid without needing many media queries */
+    grid-template-columns: repeat(auto-fit, minmax(2515.625rem, 1fr));
+    gap: 1.25rem;
+}
+
+/* Individual project */
+#Projects li {
+    background-color: rgb(241, 204, 204);
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+#Projects li:hover {
+    transform: translateY(-0.3125rem);
 }
 
 /* Connect Section */
@@ -182,37 +221,7 @@ section {
     text-decoration: underline;
 }
 
-/* Project Section */
-
-#Projects {
-    background-color: rgb(236, 167, 167);
-    padding: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    margin: 0;
-
-}
-
-#Projects li {
-    background-color: rgb(241, 204, 204);
-    padding: 1.25rem;
-    box-shadow: 0 0.125rem 0.125rem rgba(237, 208, 208, 0.5);
-    display: flex;
-    flex-direction: column;
-}
-
-#Projects ul {
-    list-style: none;
-    background-color: rgb(154, 153, 150);
-    padding: 0.625rem 1.25rem;
-    border-radius: 0.625rem;
-    margin: 0.25rem;
-    justify-content: center;
-}
-
-
-/* --- Base Styles (Mobile First) --- */
+/* --- message form section --- */
 #message-form {
     background-color: rgb(149, 229, 245);
     display: flex;
@@ -264,7 +273,6 @@ section {
     /* Remove default outline */
 }
 
-
 #message-form button {
     width: 20%;
     padding: 0.75rem;
@@ -297,9 +305,9 @@ section {
 /* Footer Section */
 footer {
     text-align: center;
-    background-color: #66c7ea;
+    background-color: #3f4c50;
+    color: rgb(230, 217, 241);
 }
-
 
 /* =========================================
    Tablet Styles (Min-Width: 768px)
@@ -308,10 +316,9 @@ footer {
 @media (min-width: 768px) {
 
     body {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        
+        display: block;
+        padding: 0 1rem;
+        /* Adds horizontal padding on larger screens */
     }
 
     h1 {
@@ -323,56 +330,75 @@ footer {
         /* Change 3: Add top margin */
     }
 
-    header nav ul {
-        padding: 1.25rem;
-        /* Change 1: Increase padding */
-        background-color: #857b83;
-        /* Change 2: Change background color */
-    }
-
-    header {
-        font-size: 1.5rem;
-        /* Change 1: Increase font size */
-        font-style: italic;
-        /* Change 2: Change font style */
-        height: 100px;
-    }
-
     section {
         padding: 3.25rem;
         /* Change 1: Increase padding */
-        scroll-margin-top: 60px;
+        margin-bottom: 2rem;
+        scroll-margin-top: 6.25rem;
         /* Ensures that when a section is scrolled into view, it accounts for the height of the sticky header */
     }
-}
 
-#Connect ul {
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 1.25rem;
-}
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        /* Horizontal nav for tablet */
+        gap: 2.5rem;
+        padding: 0;
+        background-color: transparent;
+        /* Seamless with the header background */
+    }
 
-#Skills {
-    /* Changes to a two-column layout on medium screens */
-    grid-template-columns: repeat(2, 1fr);
-}
+    header {
+        position: sticky;
+        top: 0;
+        height: auto;
+        min-height: 5rem;
+        padding: 1.25rem 0;
+        z-index: 1000;
+        font-size: 1.25rem;
+        /* Balanced size for tablet */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e75613;
+    }
 
-#Projects ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
+    /* 4. Grid Layouts */
+    #Skills,
+    #Projects ul,
+    #Connect ul {
+        display: grid;
+        gap: 1.25rem;
+    }
 
-#message-form {
-    width: 50%;
-    /* Center the form on larger screens */
-}
+    #Connect ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-#submit-button {
-    width: auto;
-    /* Allow button to the size based on the message */
-    padding: 12px 24px;
-    /* Adjust padding for desktop */
+    #Skills {
+        /* Changes to a two-column layout on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #Projects ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    #message-form {
+        width: 70%;
+        /* Center the form on larger screens */
+        margin: 0 auto;
+        /* Center the form horizontally */
+    }
+
+    #submit-button {
+        width: auto;
+        /* Allow button to the size based on the message */
+        padding: 0.75rem 1.5rem;
+        /* Adjust padding for desktop */
+    }
 }
 
 /* =========================================
@@ -380,53 +406,120 @@ footer {
    ========================================= */
 @media (min-width: 1024px) {
 
+
+    /* 1. Layout and Spacing Adjustments */
     body {
         display: flex;
         flex-direction: column;
         /* Stacks sections vertically */
-        gap: 40px;
-        /* Adds 40px space between all direct children */
+        gap: 3rem;
+        padding: 0 5%;
+        /* Adds horizontal padding on larger screens */
+    }
+
+    /* Increased spacing and adjust scroll margin for desktop */
+    section {
+        padding: 4rem 2rem;
+        /* More "breathable" sections */
+        scroll-margin-top: 6.25rem;
+        /* Adjust for sticky header height */
     }
 
     h1 {
-        font-size: 2.25rem;
+        font-size: 3.5rem;
         /* Change 1: Further increase size */
         color: #000;
         /* Change 2: Further change color */
-        margin-top: 3.5rem;
+        margin-top: 4rem;
         /* Change 3: Add top margin */
     }
 
+    /*Header styled Flexbox and spacing on desktop */
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 10%;
+        padding: 1rem 8%;
         background-color: #373c3e;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        height: 5rem;
     }
 
+    header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: rgb(230, 217, 241);
+        font-style: normal;
+        /* Keep title clean and readable */
+    }
+
+    /* Navigation styled as a horizontal flex container on desktop */
     header nav ul {
-        padding: 2.5rem;
-        /* Change 1: Increase padding again */
+        display: flex;
+        flex-direction: row;
+        gap: 3.25rem;
+        padding: 0;
+        background-color: transparent;
+        width: auto;
+    }
+
+    /* Animated Underline on Hover */
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0.125rem;
+        bottom: -0.3rem;
+        left: 0;
         background-color: #ef9607;
-        /* Change 2: Change background color */
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
         width: 100%;
     }
 
-    #Skills {
-        /* Changes to a single column layout on small screens */
-        grid-template-columns: 1fr;
+    nav a:hover {
+        color: #ef9607;
     }
 
+    /*change to grid layout for connect, skills, and projects on desktop */
+    #Connect ul {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 50rem;
+        justify-content: center;
+        gap: 3.25rem;
+        margin: 0 auto;
+    }
+
+    /* Skills section changes to a 4-column grid on desktop */
+    #Skills {
+        display: grid;
+        /* Option A: Fixed 4 columns */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Projects section changes to a 3-column grid on desktop */
     #Projects ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 2.5rem;
     }
 
-    #Connect ul {
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-        gap: 3.25rem;
+    /* Message form changes for  more compact and centered layout on desktop */
+
+    #message-form {
+        width: 50%;
+        /* Center the form on larger screens */
+        margin: 0 auto;
+        /* Center the form horizontally */
+    }
+    #message-form button {
+        width: auto;
+        /* Allow button to the size based on the message */
+        padding: 0.75rem 1.5rem;
+        /* Adjust padding for desktop */
     }
 }
