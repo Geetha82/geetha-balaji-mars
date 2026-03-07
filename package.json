@@ -1,0 +1,25 @@
+{
+  "name": "geetha-balaji-mars",
+  "version": "1.0.0",
+  "description": "This repository contains my professional portfolio and an interactive **Mars Rover Photo Explorer**. The application retrieves and displays real-time imagery from NASA's Mars Rover Photos API using asynchronous JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geetha82/geetha-balaji-mars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Geetha82/geetha-balaji-mars/issues"
+  },
+  "homepage": "https://github.com/Geetha82/geetha-balaji-mars#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
