@@ -5,7 +5,7 @@ const body = document.body;
 //------Skills Section-------
 
 //List your technical skills
-const skills = ["Javascript", "HTML", "CSS", "Git", "Github"];
+const skills = ["JavaScript", "HTML", "CSS", "Git", "GitHub"];
 
 //Select the Skills section by id
 const skillsSection = document.getElementById("Skills");

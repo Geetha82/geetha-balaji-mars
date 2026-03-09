@@ -131,7 +131,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     /* Align items to the baseline */
 
 }
@@ -142,23 +142,36 @@ nav a:hover {
 
 /* Skills Section */
 #Skills {
-    padding: 1.25rem;
-    display: flex;
-    gap: 0.625rem;
+    padding: 1.5rem;
     margin: 0;
-    margin-bottom: 1.25rem;
     background-color: rgb(236, 170, 122);
 }
 
 #Skills li {
-    list-style: none;
     font-size: 0.9rem;
+    font-weight: 600;
     background-color: rgb(154, 153, 150);
+    color: white;
     padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
-    margin: 0.25rem;
+}
+
+#Skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     justify-content: center;
-     border-radius: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Slight hover effect for mobile touch */
+#Skills li:active {
+    background-color: #ef9607;
+    transform: scale(0.95);
 }
 
 /* Project Section */
@@ -191,6 +204,14 @@ nav a:hover {
 
 #Projects li:hover {
     transform: translateY(-0.3125rem);
+}
+
+#emailIcon,
+#gitHubIcon,
+#linkedinIcon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
 }
 
 /* Connect Section */
@@ -365,11 +386,34 @@ footer {
         background-color: #e75613;
     }
 
-    .experience-header-row { flex-direction: row; justify-content: space-between; }
+    .experience-header-row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    #Skills ul {
+        display: grid;
+        /* Creates as many columns as will fit, with a minimum width of 150px each */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        justify-content: stretch;
+    }
 
-    /* 4. Grid Layouts */
-    #Skills,
+    #Skills li {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        text-align: center;
+        /* Centers text within the grid cell */
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Add a hover effect for tablet/desktop users with a mouse */
+    #Skills li:hover {
+        background-color: #e75613;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
     #Projects ul,
     #Connect ul {
         display: grid;
@@ -380,10 +424,6 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #Skills {
-        /* Changes to a two-column layout on medium screens */
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     #Projects ul {
         display: grid;
@@ -499,11 +539,37 @@ footer {
     }
 
     /* Skills section changes to a 4-column grid on desktop */
-    #Skills {
+
+    /* Target the UL for a wider Desktop Grid */
+    #Skills ul {
         display: grid;
-        /* Option A: Fixed 4 columns */
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        /* Desktop allows for more columns (min 180px each) */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2rem;
+        /* Larger gap for a breathable layout */
+        max-width: 1200px;
+        /* Keeps the grid from getting too wide on ultra-wide monitors */
+        margin: 0 auto;
+        /* Centers the grid container */
+    }
+
+    #Skills li {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        background-color: #373c3e;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: default;
+    }
+
+    /* Desktop Hover Interaction */
+    #Skills li:hover {
+        background-color: #ef9607;
+        color: #0f100f;
+        transform: scale(1.08);
+        /* Slightly larger pop on desktop */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        /* Ensures the scaled item stays on top of neighbors */
     }
 
     /* Projects section changes to a 3-column grid on desktop */
@@ -521,6 +587,7 @@ footer {
         margin: 0 auto;
         /* Center the form horizontally */
     }
+
     #message-form button {
         width: auto;
         /* Allow button to the size based on the message */
